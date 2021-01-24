@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 require('dotenv').load()
 
+exports.fileExtension = (url) => { return url.split('.').pop().split(/\#|\?/)[0] }
 
 exports.verifyToken = (req, res, next) => {
   const { token } = req.headers
